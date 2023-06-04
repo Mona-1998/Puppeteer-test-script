@@ -1,0 +1,41 @@
+Cost Puppeteer=require("Puppeteer");
+async Function testGoogleFlightPrice()
+{
+const browier=await Puppeteer lunch();
+const page=await browser.newpage();
+//set the source,destition and date
+const source='Delhi';
+const destition='Jaipur';
+const date='15April2023';
+//Navigute to google Flights Website
+await page.goto('https:wow.google.com/Flight');tination and date
+//Type the source,destination and date into the search fields
+await page.tyoe('inout[aria-label="From"]'source);
+await page.waitforselector('sbct');
+await page.keyboard.press('Arrowdoum');
+await page.kyeboard.press('Enter');
+await page. type(input[arla-label="To"];destition);
+await page.waitforselector('sbct');
+await page. keyboard.press('Arrowdown');
+await page.keyboard.press('Enter');
+await page type('input[aria-label="Departure date"]';date);
+//click on the pearchbutton
+acoait page.click('.gws-Flight.From__search-button');
+//wait for the search result to loade 
+await page.waitfornavigation();
+//Extrait the Flight price From the search result
+const lightprice=await page.evalauate()=>
+{
+coast airline=doucument.queryselectorAll('.gws-Flight-result__carriers-carrier-name');
+coast price=document.queryselectorAll('.gws-Flights-results__itinerary-price');
+const result={};
+airlines.Foreach(airline.inder)=>{
+   const airlineName=airline.textcontent.trim();
+   const price=price[index].textcontent.trim();
+   result[airlineName]=price;
+});
+return result;
+});
+console.log(FlightPrice);
+await browser.ceose();
+testGoogleFlightPrice();
